@@ -12,7 +12,13 @@ def mas_repetido(matriz):
     return max(diccionario.iteritems(), key=operator.itemgetter(1))[0]
 
 def condensa(cadena):
-    pass
+    lista = []
+    for i in range(len(cadena)):
+        if len(lista) == 0 or lista[-1][0] != cadena[i]:
+            lista += [[cadena[i], 1]]
+        else:
+            lista[-1][1] += 1
+    return lista
 
 def triangulo_pascal(niveles):
     if niveles < 0:
@@ -27,4 +33,16 @@ def triangulo_pascal(niveles):
         return triangulo_pascal(niveles-1)+[lista]
 
 def subcadenas(cadena):
-    pass
+        return subcadenas_aux(cadena, len(cadena)-1) + [[cadena]]
+
+def subcadenas_aux(cadena, longitud):
+    if longitud == 0:
+        return [[""]]
+    lista = []
+    for i in range(len(cadena) - (longitud -1)):
+        n = i + longitud
+        print("long" + str(longitud) + ", i" + str(i) + ", n" + str(n))
+        print(cadena[i:n])
+        lista.append(cadena[i:n])
+    return subcadenas_aux(cadena,longitud-1) + [lista]
+
