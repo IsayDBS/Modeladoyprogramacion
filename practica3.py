@@ -41,8 +41,7 @@ def subcadenas_aux(cadena, longitud):
     lista = []
     for i in range(len(cadena) - (longitud -1)):
         n = i + longitud
-        print("long" + str(longitud) + ", i" + str(i) + ", n" + str(n))
-        print(cadena[i:n])
+        #print("long" + str(longitud) + ", i" + str(i) + ", n" + str(n))
+        #print(cadena[i:n])
         lista.append(cadena[i:n])
     return subcadenas_aux(cadena,longitud-1) + [lista]
-

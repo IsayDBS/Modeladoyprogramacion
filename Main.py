@@ -10,10 +10,10 @@ def seleccionador (argument):
         while True:
             try:
                 entrada = input("Introduce el numero del nivel que quieres ver del triangulo de pascal\n")
-                if entrada > 0:
+                if entrada >= 0:
                     break
                 else:
-                    print('Error, no existen triengulos de nivel menor a 1')
+                    print('Error, no existen triengulos de nivel menor a 0')
             except:
                 print('Error, introduce un numero entero\n')
         print(triangulo_pascal(entrada))
@@ -30,7 +30,7 @@ def pedirNumeroEntero():
     num = 0
     while not correcto:
         try:
-            num = int(input("Introduce un numero entero: "))
+            num = int(input("Introduce un numero entero del menu: "))
             correcto = True
         except:
             print('Error, introduce un numero entero\n')
