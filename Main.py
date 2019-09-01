@@ -7,7 +7,15 @@ def seleccionador (argument):
         entrada = input("Introduce una cadena\n")
         print(condensa(entrada))
     elif argument == 3:
-        entrada = input("Introduce el numero del nivel que quieres ver del triangulo de pascal\n")
+        while True:
+            try:
+                entrada = input("Introduce el numero del nivel que quieres ver del triangulo de pascal\n")
+                if entrada > 0:
+                    break
+                else:
+                    print('Error, no existen triengulos de nivel menor a 1')
+            except:
+                print('Error, introduce un numero entero\n')
         print(triangulo_pascal(entrada))
     elif argument == 4:
         entrada = input("Introduce una cadena\n")
