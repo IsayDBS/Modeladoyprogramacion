@@ -1,30 +1,45 @@
 from practica3 import *
 def seleccionador (argument):
     if argument == 1:
-        entrada = input("Introduce una matriz de la forma [[1,2],[2,3]]\n")
-        print(mas_repetido(entrada))
+        while True:
+            try:
+                entrada = input('Introduce una matriz de la forma [[1,2],[2,3]]\n')
+                print(mas_repetido(entrada))
+                break
+            except:
+                print('Error, se debe ingresar una matriz bidimensional\n')
     elif argument == 2:
-        entrada = input("Introduce una cadena\n")
-        print(condensa(entrada))
+        while True:
+            try:
+                entrada = input('Introduce una cadena\n')
+                print(condensa(str(entrada)))
+                break
+            except:
+                print('Error, Las cadenas deben estar entre comillas\n')
     elif argument == 3:
         entrada = -1
         correcto= False
         while not correcto:
             try:
-                entrada = int(input('Introduce un numero entero positivo\n'))
+                entrada = int(input('Introduce un numero entero mayor o igual a cero\n'))
                 if entrada >= 0:
                     print(triangulo_pascal(entrada))
                     correcto = True
             except:
-                print('No es entrada valida')
+                print('Error, se debe ingresar un numero mayor o igual a cero')
         #print(triangulo_pascal(entrada))
     elif argument == 4:
-        entrada = input("Introduce una cadena\n")
-        print(subcadenas(entrada))
+        while True:
+            try:
+                entrada = input('Introduce una cadena\n')
+                print(subcadenas(str(entrada)))
+                break
+            except:
+                print('Error, Las cadenas deben estar entre comillas\n')
     elif argument == 0:
         pass
     else:
-        print("No es un opcion")
+        print('No es una opcion')
 
 def pedirNumeroEntero():
     correcto= False
