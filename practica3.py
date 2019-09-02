@@ -9,7 +9,9 @@ def mas_repetido(matriz):
                 diccionario[valor2] +=  1
             else:
                 diccionario[valor2] = 0
-    return max(diccionario.iteritems(), key=operator.itemgetter(1))[0]
+    return max(diccionario.iteritems(), key=operator.itemgetter(1))[0] #python2.7
+    #este funciona para python 3.7
+    #return max(stat.items(), key=operator.itemgetter(1))[0]
 
 def condensa(cadena):
     lista = []

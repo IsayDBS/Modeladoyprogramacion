@@ -7,8 +7,17 @@ def seleccionador (argument):
         entrada = input("Introduce una cadena\n")
         print(condensa(entrada))
     elif argument == 3:
-        entrada = input('Introduce un numero entero\n')
-        print(triangulo_pascal(entrada))
+        entrada = -1
+        correcto= False
+        while not correcto:
+            try:
+                entrada = int(input('Introduce un numero entero positivo\n'))
+                if entrada >= 0:
+                    print(triangulo_pascal(entrada))
+                    correcto = True
+            except:
+                print('No es entrada valida')
+        #print(triangulo_pascal(entrada))
     elif argument == 4:
         entrada = input("Introduce una cadena\n")
         print(subcadenas(entrada))
